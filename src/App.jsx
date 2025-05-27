@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 function App() {
   const [photo, setPhoto] = useState(null);
@@ -44,8 +46,10 @@ function App() {
 
       <div className="photo-card">
         {photo ? (
-          <div className="clipped-image zoom-enabled">
-            <img src={photo} alt="ID" />
+          <div className="clipped-image">
+            <Zoom>
+              <img src={photo} alt="ID" />
+            </Zoom>
           </div>
         ) : (
           <label className="upload-label">
