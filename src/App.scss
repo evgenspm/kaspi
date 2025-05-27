@@ -9,7 +9,8 @@ html, body, #root {
 }
 
 html, body, #root, .app {
-  touch-action: none; // disable pinch-zoom everywhere
+  touch-action: pan-y;
+  overscroll-behavior: none;
 }
 
 .app {
@@ -74,24 +75,25 @@ html, body, #root, .app {
     justify-content: center;
     align-items: center;
 
-    .clipped-image {
+    .zoom-container {
       width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 360px;
+      overflow: auto;
       touch-action: pinch-zoom;
+      -webkit-overflow-scrolling: touch;
 
       img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+        height: auto;
+        object-fit: contain;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
       }
     }
 
     .upload-label {
-      @extend .clipped-image;
       font-size: 1rem;
       color: #555;
       cursor: pointer;

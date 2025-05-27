@@ -46,10 +46,8 @@ function App() {
 
       <div className="photo-card">
         {photo ? (
-          <div className="clipped-image">
-            <Zoom>
-              <img src={photo} alt="ID" />
-            </Zoom>
+          <div className="zoom-container">
+            <img src={photo} alt="ID" />
           </div>
         ) : (
           <label className="upload-label">
