@@ -1,0 +1,146 @@
+$background: #fff;
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: $background;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top, 20px) 16px env(safe-area-inset-bottom, 20px);
+  box-sizing: border-box;
+
+  padding-top: 54px;
+  padding-bottom: 20px;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+
+    .icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 17px;
+      font-weight: 600;
+    }
+  }
+
+  .tabs {
+    display: flex;
+    margin: 12px 0;
+    background: #f1f1f1;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      margin: 1px;
+      text-align: center;
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      cursor: pointer;
+
+      &.active {
+        background: white;
+        color: black;
+        font-weight: 600;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .photo-card {
+    flex: 1;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .clipped-image {
+      width: calc(100% + 40px);
+      height: 100%;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: calc(100% + 40px);
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .upload-label {
+      @extend .clipped-image;
+      font-size: 1rem;
+      color: #555;
+      cursor: pointer;
+      padding: 0 12px;
+      text-align: center;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+
+    .action-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+
+      &.primary {
+        background-color: #0775CA;
+        color: white;
+      }
+
+      &.secondary {
+        background-color: white;
+        color: #1077CB;
+        border-color: #1077CB;
+      }
+
+      .btn-icon {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+.zoom-enabled {
+  touch-action: pinch-zoom;
+}
