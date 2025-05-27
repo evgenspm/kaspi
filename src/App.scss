@@ -9,8 +9,8 @@ html, body, #root {
 }
 
 html, body, #root, .app {
+  overflow: hidden;
   touch-action: pan-y;
-  overscroll-behavior: none;
 }
 
 .app {
@@ -79,14 +79,18 @@ html, body, #root, .app {
       width: 100%;
       max-width: 360px;
       overflow: auto;
-      touch-action: pinch-zoom;
       -webkit-overflow-scrolling: touch;
+
+      /* Let pinch-zoom happen */
+      touch-action: pinch-zoom;
 
       img {
         width: 100%;
         height: auto;
         object-fit: contain;
-        touch-action: none;
+
+        /* Allow browser default pinch-zoom */
+        touch-action: auto;
         user-select: none;
         -webkit-user-drag: none;
         -webkit-touch-callout: none;
