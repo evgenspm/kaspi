@@ -1,5 +1,5 @@
 {
-  "name": "Удостоверение личности",
+  "name": "Kaspi.kz",
   "short_name": "Kaspi.kz",
   "start_url": ".",
   "display": "standalone",
@@ -7,12 +7,12 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "public/icons/kaspiIcon.jpg",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "public/icons/kaspiIcon.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }
